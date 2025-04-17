@@ -1,0 +1,177 @@
+package Organizations;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import com.GenericUtilities.Excel_Utility;
+import com.GenericUtilities.Java_Utility;
+import com.GenericUtilities.WebDriver_Utility;
+
+import BaseClassUtilitiy.BaseClass;
+import POMpage.CreateNewOrgPompage;
+import POMpage.HomePomPage;
+import POMpage.OrgDetailPompage;
+import POMpage.OrganizationPompage;
+
+
+public class CreateOrgWithIndustryType extends BaseClass{
+//	@Parameters("browser")
+	@Test(groups="integration")
+
+	public void organisationindustrytype() throws Exception {
+
+		// Fetch Data from Property File
+//		Property_Utility pro = new Property_Utility();
+//		//String browser = pro.FetchDataFromProFile("browser");
+//		String UrL = pro.FetchDataFromProFile("URL");
+//		String un = pro.FetchDataFromProFile("USERNAME");
+//		String pwsd = pro.FetchDataFromProFile("PASSWORD");
+//		String timeouts = pro.FetchDataFromProFile("TIME");
+
+		// Fetch data from excel file
+		Excel_Utility ex_util = new Excel_Utility();
+		Java_Utility j_util = new Java_Utility();
+		int random = j_util.getRandomNumber();
+		String orgname = ex_util.FetchDataFromExcel("Organization", 1, 2) + random;
+		String industry = ex_util.FetchDataFromExcel("Organization", 1, 4);
+		String type = ex_util.FetchDataFromExcel("Organization", 1, 5);
+
+//		// launch the browser
+//		WebDriver driver = null;
+//		if (Browser.equals("chrome")) {
+//
+//			driver = new ChromeDriver();
+//		} else if (Browser.equals("edge")) {
+//
+//			driver = new EdgeDriver();
+//
+//		} else {
+//
+//			driver = new ChromeDriver();
+//		}
+
+		// maximize the window
+		WebDriver_Utility w_util = new WebDriver_Utility();
+//		w_util.maximizeTheWindow(driver);
+
+//		// implicity wait
+//		w_util.waitTillElementFound(timeouts, driver);
+//
+//		// Navigate to an V-Tiger application
+//		w_util.navigateToApplication(UrL, driver);
+//
+//		LoginPompage l = new LoginPompage(driver);
+//		l.login(un, pwsd);
+
+		// Identify username textfield and pass the text
+		// driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(un);
+
+		// Identify password textfield and pass the text
+		// driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(pwsd);
+
+		// Identify login button and click on it
+		// driver.findElement(By.xpath("//input[@id='submitButton']")).click();
+
+		// Identify org tab in home page and click
+		// driver.findElement(By.linkText("Organizations")).click();
+		HomePomPage home=new HomePomPage(driver);
+		Object exp_home = home.getHeader().contains("Home");
+		SoftAssert soft=new SoftAssert();
+		soft.assertEquals(exp_home, true);
+		home.getCont_tab();
+
+		// identify plus button and click
+		// driver.findElement(By.xpath("//img[@title='Create
+		// Organization...']")).click();
+		OrganizationPompage org = new OrganizationPompage(driver);
+		org.getPlusicon();
+
+		// Enter org name in create new org page and save
+
+		// driver.findElement(By.name("accountname")).sendKeys(orgname);
+		// WebElement ind_dd = driver.findElement(By.name("industry"));
+		// WebElement type_dd = driver.findElement(By.name("accounttype"));
+
+		CreateNewOrgPompage neworg = new CreateNewOrgPompage(driver);
+		neworg.getOrg_name(orgname);
+		WebElement ind_dd = neworg.getOrg_ind();
+		WebElement type_dd = neworg.getOrg_type();
+
+		w_util.handleDropdownUsingValue(ind_dd, industry);
+		w_util.handleDropdownUsingValue(type_dd, type);
+
+		// driver.findElement(By.xpath("(//input[@title='Save [Alt+S]'])[1]")).click();
+		neworg.getOrg_savebtn();
+
+		
+		// WebElement header =
+		// driver.findElement(By.xpath("//span[contains(text(),'Organization
+		// Information')]"));
+		
+		// verify actual org name with expected org name
+		OrgDetailPompage orgdetail = new OrgDetailPompage(driver);
+		boolean header = orgdetail.getHeader().contains(orgname);
+		Assert.assertEquals(header, true);
+		
+//		if (header.contains(orgname)) {
+//			Reporter.log(orgname + "Test Pass");
+//		} else {
+//			Reporter.log("org not created");
+//		}
+		// verify actual industry name with expected industry name and type
+		// WebElement Industry = driver.findElement(By.id("mouseArea_Industry"));
+		boolean actind = orgdetail.getVerifyIndustry().contains(industry);
+		Assert.assertEquals(actind, true);
+		
+//		if (actind.equals(industry)) {
+//			Reporter.log(industry + "Test pass");
+//		} else {
+//			Reporter.log("industry not selected");
+//		}
+
+		// verify actual industry name with expected industry name and type
+		// WebElement type1 = driver.findElement(By.id("mouseArea_Type"));
+		boolean acttype = orgdetail.getVerifyType().contains(type);
+		Assert.assertEquals(acttype, true);
+		
+		
+//		if (acttype.equals(type)) {
+//			Reporter.log(type + "Test pass");
+//		} else {
+//			Reporter.log("type not selected");
+//		}
+
+		// Click on org tab and delete the created org
+		// driver.findElement(By.linkText("Organizations")).click();
+		home.getOrg_tab();
+
+		driver.findElement(
+				By.xpath("//a[text()='" + orgname + "']/ancestor::tr[@bgcolor='white']/descendant::a[text()='del']"))
+				.click();
+
+  		Thread.sleep(2000);
+
+		// Handle the popup
+		w_util.handleAlertAndAccept(driver);
+
+		// Logout of the appln
+		// WebElement admin =
+		// driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
+//		WebElement admin = home.getAdmin_icon();
+//
+//		// Actions act = new Actions(driver);
+//
+//		// act.moveToElement(admin).perform();
+//
+//		// driver.findElement(By.linkText("Sign Out")).click();
+//		w_util.actionMouseHovering(driver, admin);
+//		home.getSignout();
+//
+//		// close the browser
+//		w_util.quitTheBrowser(driver);
+		soft.assertAll();
+	}
+}
