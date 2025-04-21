@@ -8,11 +8,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+
+/**
+ * @author : M.Yogesh
+ * This is WebDriver Utility
+ */
 public class WebDriver_Utility {
+	/**
+	 * This is used for maximize the Browser
+	 * @param driver
+	 */
 	public void maximizeTheWindow(WebDriver driver) {
 		driver.manage().window().maximize();
 	}
-	
+	/**
+	 * This method is used for Implicit wait
+	 * @param Timeouts
+	 * @param driver
+	 */
      public void waitTillElementFound(String Timeouts,WebDriver driver) {
     	 
 

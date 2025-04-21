@@ -5,6 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * @author : M.Yogesh
+ */
 public class Property_Utility {
 	
 	public String FetchDataFromProFile(String key) throws IOException{

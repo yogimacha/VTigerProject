@@ -8,6 +8,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**
+ * @author : M.Yogesh
+ */
 public class JsonUtility {
 	public String FetchDataFromJsonFile(String key) throws FileNotFoundException, IOException, ParseException {
 		JSONParser parser = new JSONParser();

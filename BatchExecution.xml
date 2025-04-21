@@ -3,12 +3,12 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Organizations.CreateOrgWithIndustryType"/>
-      <class name="Organizations.CreateOrganizationWithPhoneNumber"/>
-      <class name="Contacts.CreateContactWithNmae"/>
-      <class name="Organizations.CreateOrganisationWithName"/>
-      <class name="Contacts.CreateContactWithSupportDate"/>
-      <class name="Contacts.CreateContactWithOrg"/>
+      <class name="Organizations.CreateOrganizationWithPhoneNumberTest"/>
+      <class name="Contacts.CreateContactWithSupportDateTest"/>
+      <class name="Organizations.CreateOrganisationWithNameTest"/>
+      <class name="Contacts.CreateContactWithOrgTest"/>
+      <class name="Organizations.CreateOrgWithIndustryTypeTest"/>
+      <class name="Contacts.CreateContactWithNameTest"/>
     </classes>
   </test> <!-- Test --> 
 </suite> <!-- Suite -->

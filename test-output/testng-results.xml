@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Report configuration]]>
@@ -17,18 +17,6 @@
       <![CDATA[logout of the application]]>
     </line>
     <line>
-      <![CDATA[contacttest--Started--]]>
-    </line>
-    <line>
-      <![CDATA[contacttest--Success--]]>
-    </line>
-    <line>
-      <![CDATA[Logout of the appln]]>
-    </line>
-    <line>
-      <![CDATA[logout of the application]]>
-    </line>
-    <line>
       <![CDATA[createConwithSupportdateTest--Started--]]>
     </line>
     <line>
@@ -38,16 +26,19 @@
       <![CDATA[Logout of the appln]]>
     </line>
     <line>
+      <![CDATA[Close the Browser]]>
+    </line>
+    <line>
+      <![CDATA[Launch the browser]]>
+    </line>
+    <line>
       <![CDATA[logout of the application]]>
     </line>
     <line>
-      <![CDATA[createConwithorgTest--Started--]]>
+      <![CDATA[contacttest--Started--]]>
     </line>
     <line>
-      <![CDATA[Buchi Babu6153Test Pass]]>
-    </line>
-    <line>
-      <![CDATA[createConwithorgTest--Success--]]>
+      <![CDATA[contacttest--Success--]]>
     </line>
     <line>
       <![CDATA[Logout of the appln]]>
@@ -62,64 +53,44 @@
       <![CDATA[Close the DataBase Connection]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-04-16T14:49:05 IST" name="Default suite" finished-at="2025-04-16T14:50:27 IST" duration-ms="81865">
+  <suite started-at="2025-04-19T15:02:57 IST" name="Suite" finished-at="2025-04-19T15:03:42 IST" duration-ms="44764">
     <groups>
+      <group name="smoke">
+        <method signature="CreateContactWithNameTest.contacttest()[pri:0, instance:Contacts.CreateContactWithNameTest@5b94b04d]" name="contacttest" class="Contacts.CreateContactWithNameTest"/>
+        <method signature="CreateContactWithSupportDateTest.createConwithSupportdateTest()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" name="createConwithSupportdateTest" class="Contacts.CreateContactWithSupportDateTest"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-04-16T14:49:05 IST" name="Default test" finished-at="2025-04-16T14:50:27 IST" duration-ms="81865">
-      <class name="Contacts.ContractsScenariosTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:05 IST" name="beforeSuite" finished-at="2025-04-16T14:49:05 IST" duration-ms="15" status="PASS">
+    <test started-at="2025-04-19T15:02:57 IST" name="Test" finished-at="2025-04-19T15:03:42 IST" duration-ms="44764">
+      <class name="Contacts.CreateContactWithSupportDateTest">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:02:57 IST" name="beforeSuite" finished-at="2025-04-19T15:02:57 IST" duration-ms="19" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Configure the DB:Connect]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:05 IST" name="beforeTest" finished-at="2025-04-16T14:49:05 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:02:57 IST" name="beforeTest" finished-at="2025-04-19T15:02:57 IST" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[BT:parallel Exe]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:05 IST" name="beforeClass" finished-at="2025-04-16T14:49:06 IST" duration-ms="1486" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:02:57 IST" name="beforeClass" finished-at="2025-04-19T15:02:59 IST" duration-ms="1503" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Launch the browser]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:06 IST" name="beforeMethod" finished-at="2025-04-16T14:49:07 IST" duration-ms="1257" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:02:59 IST" name="beforeMethod" finished-at="2025-04-19T15:03:00 IST" duration-ms="1209" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[logout of the application]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="contacttest()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:07 IST" name="contacttest" finished-at="2025-04-16T14:49:24 IST" duration-ms="16205" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[contacttest--Started--]]>
-            </line>
-            <line>
-              <![CDATA[contacttest--Success--]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- contacttest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:24 IST" name="afterMethod" finished-at="2025-04-16T14:49:28 IST" duration-ms="3982" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout of the appln]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:28 IST" name="beforeMethod" finished-at="2025-04-16T14:49:31 IST" duration-ms="3347" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[logout of the application]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="createConwithSupportdateTest()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:31 IST" name="createConwithSupportdateTest" finished-at="2025-04-16T14:49:44 IST" duration-ms="13356" status="PASS">
+        <test-method signature="createConwithSupportdateTest()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:03:00 IST" name="createConwithSupportdateTest" finished-at="2025-04-19T15:03:16 IST" duration-ms="16098" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[createConwithSupportdateTest--Started--]]>
@@ -129,62 +100,75 @@
             </line>
           </reporter-output>
         </test-method> <!-- createConwithSupportdateTest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:44 IST" name="afterMethod" finished-at="2025-04-16T14:49:48 IST" duration-ms="4085" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:03:16 IST" name="afterMethod" finished-at="2025-04-19T15:03:20 IST" duration-ms="4271" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout of the appln]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:48 IST" name="beforeMethod" finished-at="2025-04-16T14:49:52 IST" duration-ms="3397" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[logout of the application]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="createConwithorgTest()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:49:52 IST" name="createConwithorgTest" finished-at="2025-04-16T14:50:22 IST" duration-ms="30036" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[createConwithorgTest--Started--]]>
-            </line>
-            <line>
-              <![CDATA[Buchi Babu6153Test Pass]]>
-            </line>
-            <line>
-              <![CDATA[createConwithorgTest--Success--]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- createConwithorgTest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:50:22 IST" name="afterMethod" finished-at="2025-04-16T14:50:26 IST" duration-ms="4422" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout of the appln]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:50:26 IST" name="afterClass" finished-at="2025-04-16T14:50:27 IST" duration-ms="236" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:03:20 IST" name="afterClass" finished-at="2025-04-19T15:03:20 IST" duration-ms="250" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close the Browser]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:50:27 IST" name="afterTest" finished-at="2025-04-16T14:50:27 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:03:42 IST" name="afterTest" finished-at="2025-04-19T15:03:42 IST" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[AT:Parllel exe]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:Contacts.ContractsScenariosTest@5fbe4146]" started-at="2025-04-16T14:50:27 IST" name="afterSuite" finished-at="2025-04-16T14:50:27 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:Contacts.CreateContactWithSupportDateTest@1190200a]" started-at="2025-04-19T15:03:42 IST" name="afterSuite" finished-at="2025-04-19T15:03:42 IST" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close the DataBase Connection]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- Contacts.ContractsScenariosTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- Contacts.CreateContactWithSupportDateTest -->
+      <class name="Contacts.CreateContactWithNameTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Contacts.CreateContactWithNameTest@5b94b04d]" started-at="2025-04-19T15:03:20 IST" name="beforeClass" finished-at="2025-04-19T15:03:21 IST" duration-ms="1077" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Launch the browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Contacts.CreateContactWithNameTest@5b94b04d]" started-at="2025-04-19T15:03:21 IST" name="beforeMethod" finished-at="2025-04-19T15:03:23 IST" duration-ms="1114" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[logout of the application]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="contacttest()[pri:0, instance:Contacts.CreateContactWithNameTest@5b94b04d]" started-at="2025-04-19T15:03:23 IST" name="contacttest" finished-at="2025-04-19T15:03:38 IST" duration-ms="14941" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[contacttest--Started--]]>
+            </line>
+            <line>
+              <![CDATA[contacttest--Success--]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- contacttest -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Contacts.CreateContactWithNameTest@5b94b04d]" started-at="2025-04-19T15:03:38 IST" name="afterMethod" finished-at="2025-04-19T15:03:42 IST" duration-ms="4001" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Logout of the appln]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Contacts.CreateContactWithNameTest@5b94b04d]" started-at="2025-04-19T15:03:42 IST" name="afterClass" finished-at="2025-04-19T15:03:42 IST" duration-ms="258" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Close the Browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Contacts.CreateContactWithNameTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

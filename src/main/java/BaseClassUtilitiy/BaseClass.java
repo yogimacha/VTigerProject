@@ -31,7 +31,8 @@ public class BaseClass {
 	DataBase_Utility db=new DataBase_Utility();
 	Property_Utility pro = new Property_Utility();
 	WebDriver_Utility w_util=new WebDriver_Utility();
-	@BeforeSuite
+	
+	@BeforeSuite(groups= {"smoke","retesting","integration"})
 	public void beforeSuite(){
 	Reporter.log("Configure the DB:Connect",true);
 	ClassObject_Utility.getTest().log(Status.INFO, "Configure the DB:Connect");
@@ -39,7 +40,7 @@ public class BaseClass {
 	db.getDataBaseConnection();
 	
 	}
-	@BeforeTest
+	@BeforeTest(groups= {"smoke","retesting","integration"})
 	public void beforeTest(){
 		Reporter.log("BT:parallel Exe",true);
 		ClassObject_Utility.getTest().log(Status.INFO, "BT:parallel Exe");
@@ -47,12 +48,15 @@ public class BaseClass {
 		
 	}
 //	@Parameters("browser")
-	@BeforeClass
+	@BeforeClass(groups= {"smoke","retesting","integration"})
 	public void beforeClass() throws IOException{
 		Reporter.log("Launch the browser",true);
 		ClassObject_Utility.getTest().log(Status.INFO, "Launch the browser");
 
-		String Browser=pro.FetchDataFromProFile("browser");
+//		String Browser=pro.FetchDataFromProFile("browser");
+		
+		String Browser=System.getProperty("browser",pro.FetchDataFromProFile("browser"));
+		
 		if (Browser.equals("chrome")) {
 
 			driver = new ChromeDriver();
@@ -69,15 +73,21 @@ public class BaseClass {
 		ClassObject_Utility.setDrriver(driver);
 		
 	}
-	@BeforeMethod
+	@BeforeMethod(groups= {"smoke","retesting","integration"})
 	public void beforeMethod() throws IOException{
 		Reporter.log("logout of the application",true);
 		ClassObject_Utility.getTest().log(Status.INFO, "logout of the application");
 
-		String UrL = pro.FetchDataFromProFile("URL");
-		String un = pro.FetchDataFromProFile("USERNAME");
-		String pwsd = pro.FetchDataFromProFile("PASSWORD");
+//		String UrL = pro.FetchDataFromProFile("URL");
+//		String un = pro.FetchDataFromProFile("USERNAME");
+//		String pwsd = pro.FetchDataFromProFile("PASSWORD");
+		
+		String UrL = System.getProperty("URL",pro.FetchDataFromProFile("URL"));
+		String un = System.getProperty("USERNAME",pro.FetchDataFromProFile("USERNAME"));
+		String pwsd = System.getProperty("PASSWORD",pro.FetchDataFromProFile("PASSWORD"));
+		
 		String timeouts = pro.FetchDataFromProFile("TIME");
+		
 		w_util.waitTillElementFound(timeouts, driver);
 		LoginPompage lp=new LoginPompage(driver);
 		w_util.navigateToApplication(UrL, driver);
@@ -86,7 +96,7 @@ public class BaseClass {
 		
 		
 	}
-	@AfterMethod
+	@AfterMethod(groups= {"smoke","retesting","integration"})
 	public void afterMethod(){
 		Reporter.log("Logout of the appln",true);
 		ClassObject_Utility.getTest().log(Status.INFO, "Logout of the appln");
@@ -94,7 +104,7 @@ public class BaseClass {
 		HomePomPage home=new HomePomPage(driver);
 		home.logout(driver);
 	}
-	@AfterClass
+	@AfterClass(groups= {"smoke","retesting","integration"})
 	public void afterClass(){
 		Reporter.log("Close the Browser",true);
 		ClassObject_Utility.getTest().log(Status.INFO, "Close the Browser");
@@ -103,13 +113,13 @@ public class BaseClass {
 		wb.quitTheBrowser(driver);
 		
 	}
-	@AfterTest
+	@AfterTest(groups= {"smoke","retesting","integration"})
 	public void afterTest(){
 		Reporter.log("AT:Parllel exe",true);
 		ClassObject_Utility.getTest().log(Status.INFO, "AT:Parllel exe");
 
 	}
-	@AfterSuite
+	@AfterSuite(groups= {"smoke","retesting","integration"})
 	public void afterSuite(){
 		Reporter.log("Close the DataBase Connection",true);
 		ClassObject_Utility.getTest().log(Status.INFO, "Close the DataBase Connection");

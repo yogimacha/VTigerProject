@@ -3,20 +3,20 @@
 <suite name="Suite" thread-count="3" parallel="tests">
   <test name="Test">
     <classes>
-      <class name="Organizations.CreateOrgWithIndustryType"/>
-      <class name="Organizations.CreateOrganizationWithPhoneNumber"/>
+      <class name="Organizations.CreateOrgWithIndustryTypeTest"/>
+      <class name="Organizations.CreateOrganizationWithPhoneNumberTest"/>
     </classes>
   </test> <!-- Test -->
    <test  name="Test1">
     <classes>    
-      <class name="Contacts.CreateContactWithNmae"/>
-      <class name="Organizations.CreateOrganisationWithName"/>
+      <class name="Contacts.CreateContactWithNameTest"/>
+      <class name="Organizations.CreateOrganisationWithNameTest"/>
     </classes>
   </test> <!-- Test -->
    <test  name="Test2">
     <classes>
-      <class name="Contacts.CreateContactWithSupportDate"/>
-      <class name="Contacts.CreateContactWithOrg"/>
+      <class name="Contacts.CreateContactWithSupportDateTest"/>
+      <class name="Contacts.CreateContactWithOrgTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
